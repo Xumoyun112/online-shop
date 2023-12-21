@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+    {% for category in categories %}
+        <a href="{% url 'shop:product_detail' category.slug %}"><h2>{{ category.name }}</h2></a>
+    {% endfor %}
+{% endblock %}

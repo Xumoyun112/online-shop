@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+    {% for product in products %}
+        <h2>{{ product.name }}</h2><br>
+        <img src="{{ product.image.url }}"><br>
+        <h4>{{ product.description }}</h4><br>
+        <p>Mahsulotning qushilgan vaqti: {{ product.created_at|date:'Y-m-d h:i' }}</p><br><br>
+        <p>{{ product.views }}</p>
+    {% endfor %}
+{% endblock %}
